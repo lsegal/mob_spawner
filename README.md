@@ -4,6 +4,8 @@ MobSpawner manages worker threads that can run arbitrary commands and report
 results. Unlike distributed queues, MobSpawner is self-contained and perfect
 for small batch scripts that need to run multiple independent jobs.
 
+Documentation is on [rubydoc.org](http://rubydoc.org/gems/mob_spawner/frames).
+
 ## Usage
 
 The simplest usage of MobSpawner is:
@@ -13,9 +15,12 @@ commands = ["rvm install 1.8.6", "rvm install 1.9.2", "rvm install rbx"]
 MobSpawner.new(commands).run
 ```
 
-Which will attempt to run the 3 commands concurrently across the default of
-3 worker threads. By default commands do not report output; to get command output,
-use callbacks discussed in the next section.
+The above will attempt to run the 3 commands concurrently across the default of
+3 worker threads. By default commands do not report output; to get command
+output, use callbacks discussed in the next section.
+
+For more information on how to initialize a spawner, see the {MobSpawner}
+documentation.
 
 ## Callbacks
 
